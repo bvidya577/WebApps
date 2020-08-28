@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+.matTable {
+  height: 210px;
+  overflow-y: scroll;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}

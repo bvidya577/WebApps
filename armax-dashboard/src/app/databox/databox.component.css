@@ -1,0 +1,145 @@
+.block {
+  /* background-color: rgb(102, 150, 153);*/
+  background-color: #fff;
+  height: 300px;
+  border-radius: 10px;
+  margin: 1%;
+  max-width: 48%;
+}
+.collapseImg,
+.expandImg {
+  cursor: pointer;
+}
+.row {
+  background-color: rgb(191, 189, 192);
+}
+.space .col-12 {
+  width: 97%;
+  margin: 10px 0 0 0;
+}
+
+.space {
+  margin: 15px auto;
+  height: 200px;
+  width: 90%;
+  overflow-y: scroll;
+}
+.spaceExpanded {
+  margin: 15px auto;
+
+  width: 90%;
+  overflow-y: scroll;
+}
+.menu {
+  height: 30px;
+  background-color: #000;
+  margin: 0 -15px 0 -15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.collapseImg {
+  display: none;
+}
+.showImg {
+  display: inline-block;
+}
+.hideImg {
+  display: none;
+}
+.title,
+.expandS {
+  display: inline;
+  color: #fff;
+}
+.title {
+  float: left;
+  margin: 0.2rem 0 0 5%;
+}
+.expandS {
+  float: right;
+  margin: 0.2rem 5% 0 0;
+}
+.invHeatmapBox {
+  height: 42px;
+  max-width: 24%;
+  margin: 0.3%;
+  background-color: rgb(58, 48, 68);
+  font-size: 0.5rem;
+  padding-right: 0;
+  padding-left: 0;
+}
+.invHeatmapBox p {
+  margin-bottom: 2px;
+  text-align: center;
+  font-weight: 700;
+}
+.success {
+  height: 42;
+  background-color: rgb(131, 185, 30);
+}
+.warning {
+  height: 42;
+  background-color: rgb(225, 236, 69);
+}
+.failure {
+  height: 42px;
+  background-color: rgb(209, 68, 68);
+}
+
+.des {
+  margin-top: 20px;
+  text-align: center;
+}
+.des ul {
+  list-style-type: none;
+  margin-bottom: 0px;
+}
+.des ul li {
+  display: inline;
+}
+.colorbox {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 1px;
+}
+
+.succTxt {
+  margin-right: 12px;
+}
+
+.succ {
+  background-color: rgb(131, 185, 30);
+}
+.fail {
+  background-color: rgb(209, 68, 68);
+}
+.faile {
+  background-color: rgb(145, 112, 142);
+}
+.oth {
+  background-color: rgb(95, 42, 42);
+}
+@media all and (max-width: 1140px) {
+  .block {
+    max-width: 98%;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1139px) {
+  .col-lg-6 {
+    /* flex: 0 0 50%; */
+    flex: 100%;
+  }
+}
+@media all and (max-width: 1139px) {
+  .expandS {
+    display: none;
+  }
+}
+.expand {
+  height: 100vh !important;
+  width: 200% !important;
+  z-index: 10;
+}

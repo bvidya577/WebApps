@@ -1,0 +1,42 @@
+[
+  {
+    "status": true,
+    "control": "Hydrogen",
+    "setpoint": 1.0079,
+    "measured": "H",
+    "unit": "abcd",
+    "action": "edit"
+  },
+  {
+    "status": false,
+    "control": "Helium",
+    "setpoint": 4.0026,
+    "measured": "He",
+    "unit": "abcd",
+    "action": "edit"
+  },
+  {
+    "status": false,
+    "control": "Lithium",
+    "setpoint": 6.941,
+    "measured": "Li",
+    "unit": "abcd",
+    "action": "edit"
+  },
+  {
+    "status": true,
+    "control": "Beryllium",
+    "setpoint": 9.0122,
+    "measured": "Be",
+    "unit": "abcd",
+    "action": "edit"
+  },
+  {
+    "status": true,
+    "control": "Boron",
+    "setpoint": 10.811,
+    "measured": "B",
+    "unit": "abcd",
+    "action": "edit"
+  }
+]

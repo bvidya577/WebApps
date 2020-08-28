@@ -1,0 +1,282 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="col-6 col-sm-4 col-md-3 menu">
+    <mat-icon (click)="toggleDisplayDiv()" id="toggleDisplayDiv">menu</mat-icon>
+    <span>Armax</span>
+  </div>
+  <div class="col-4 col-sm-4 col-md-4 title">
+    <span class="headeTxt">158.75MW Solar Power Plant</span>
+  </div>
+  <button
+    type="button"
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#navbarCollapse"
+  >
+    <span class="test"></span>
+  </button>
+  <div
+    class="col-2 col-sm-12 col-md-5 collapse navbar-collapse tools"
+    id="navbarCollapse"
+  >
+    <flag-icon country="in" class="tool" style="margin-right: 5px"></flag-icon>
+    <flag-icon country="cn" class="tool"></flag-icon>
+    <mat-icon class="tool">filter_none</mat-icon>
+    <mat-icon class="tool"> local_printshop</mat-icon>
+    <mat-icon class="tool">settings</mat-icon>
+    <mat-icon matBadge="12345" matBadgeColor="warn" class="tool"
+      >notifications</mat-icon
+    >
+    <mat-icon class="tool">face</mat-icon>
+  </div>
+</nav>
+
+<div class="container-fluid toolbar2">
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="row">
+        <div class="col-sm-4 topMar">
+          <h6><b>Day and Time</b></h6>
+          <p>{{today | date:'mediumDate'}} {{today | date:'h:mm:ss a'}}</p>
+        </div>
+        <div class="col-sm-4 topMar">
+          <h6><b>Range</b></h6>
+          <button
+            class="btn btn-outline-secondary calendar cal"
+            (click)="d1.toggle()"
+            type="button"
+          ></button>
+          <input
+            class="dateField cal"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            [(ngModel)]="model1"
+            ngbDatepicker
+            #d1="ngbDatepicker"
+          />
+          <br />
+          <button
+            class="btn btn-outline-secondary calendar cal"
+            (click)="d2.toggle()"
+            type="button"
+          ></button>
+          <input
+            class="dateField cal"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            [(ngModel)]="model2"
+            ngbDatepicker
+            #d2="ngbDatepicker"
+          />
+        </div>
+        <div class="bordersSingle"></div>
+        <div class="col-sm-3 expand1">
+          <h6><b>Active Power</b></h6>
+          <p class="activP">30MW</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="row">
+        <div class="col-sm-1 borders">
+          <h4 class="rotate90">PCI</h4>
+        </div>
+        <div class="col-sm-10 expand2">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>P[MW]</th>
+                <th>Q[MVAR]</th>
+                <th>PF</th>
+                <th>V[vK]</th>
+                <th>F[hZ]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Actual</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+              </tr>
+              <tr>
+                <td>Sitepoint</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+                <td>0:00</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="success" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="success" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="success" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="row">
+        <div class="col-sm-1 borders">
+          <h4 class="rotate90">WMS</h4>
+        </div>
+        <div class="col-sm-6 topSpace1">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>AVG POA</td>
+                <td>50.08 Wm<sup>2</sup></td>
+              </tr>
+              <tr>
+                <td>AVG GHI</td>
+                <td>50.08 Wm<sup>2</sup></td>
+              </tr>
+              <tr>
+                <td>Available Power</td>
+                <td>50.5MW</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-1 borders">
+          <h4 class="rotate90 heightAdjust">CB-STATUS</h4>
+        </div>
+        <div class="col-sm-4 topSpace2">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>CB-1</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="success" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+              <tr>
+                <td>CB-2</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="success" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+              <tr>
+                <td>CB-3</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+      <div class="row">
+        <div class="col-sm-1 borders">
+          <h4 class="rotate90">GRID</h4>
+        </div>
+        <div class="col-sm-5 topSpace2">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>Grid Status</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+              <tr>
+                <td>Grid Control</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+              <tr>
+                <td>PQM COMM STS</td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" class="danger" checked />
+                    <span class="slider round"></span
+                  ></label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-1 borders">
+          <h4 class="rotate90 heightAdj">DEVICE</h4>
+        </div>
+        <div class="col-sm-5 topSpace1">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>PPC</td>
+                <td>
+                  <input type="text" class="success smVal1" value="102" />
+                  <span class="gap">|</span>228
+                </td>
+              </tr>
+              <tr>
+                <td>INVERTER</td>
+                <td>
+                  <input type="text" class="success smVal2" value="0" />
+                  <span class="gap">|</span>4
+                </td>
+              </tr>
+              <tr>
+                <td>PQM</td>
+                <td>
+                  <input type="text" class="danger smVal3" value="0" />
+                  <span class="gap">|</span>4
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

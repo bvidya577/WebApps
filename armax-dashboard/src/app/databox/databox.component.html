@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-lg-6 block m1">
+      <div class="menu">
+        <div class="title">Real Time Monitoring</div>
+        <div class="expandS" (click)="expand('Real')">
+          <img class="expandImg" src="assets/images/icons8-expand-24.png" /><img
+            class="collapseImg"
+            src="assets/images/icons8-collapse-24.png"
+          />
+        </div>
+      </div>
+      <div class="charts">
+        <chart-row></chart-row>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 block m2">
+      <div class="menu">
+        <div class="title">Inverter Heatmap</div>
+        <div class="expandS" (click)="expand('invH')">
+          <img class="expandImg" src="assets/images/icons8-expand-24.png" /><img
+            class="collapseImg"
+            src="assets/images/icons8-collapse-24.png"
+          />
+        </div>
+      </div>
+      <div class="space">
+        <div class="col-12">
+          <div class="row">
+            <div
+              class="col-3 col-sm-1 invHeatmapBox"
+              *ngFor="let arData of armaxData"
+            >
+              <div class="{{ arData.status }}">
+                <p>{{ arData.id }}</p>
+                <p>{{ arData.power }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="des">
+        <div class="colorbox succ"></div>
+        <span class="succTxt">Running</span>
+        <div class="colorbox fail"></div>
+        <span class="succTxt">Stop</span>
+        <div class="colorbox faile"></div>
+        <span class="succTxt">Common Fail</span>
+        <div class="colorbox oth"></div>
+        <span class="succTxt">Others</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-6 block m3">
+      <div class="menu">
+        <div class="title">Events</div>
+        <div class="expandS" (click)="expand('events')">
+          <img class="expandImg" src="assets/images/icons8-expand-24.png" /><img
+            class="collapseImg"
+            src="assets/images/icons8-collapse-24.png"
+          />
+        </div>
+      </div>
+      <div class="eventsTable">
+        <app-events></app-events>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 block m4">
+      <div class="menu">
+        <div class="title">Control Status</div>
+        <div class="expandS" (click)="expand('cntrlS')">
+          <img class="expandImg" src="assets/images/icons8-expand-24.png" /><img
+            class="collapseImg"
+            src="assets/images/icons8-collapse-24.png"
+          />
+        </div>
+      </div>
+      <div class="controlTable">
+        <app-control-status></app-control-status>
+      </div>
+    </div>
+  </div>
+</div>
