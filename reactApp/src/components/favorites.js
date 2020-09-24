@@ -1,51 +1,65 @@
-import React from 'react';
-import $ from'jquery';
+import React from "react";
+//import $ from "jquery";
 class Favorites extends React.Component {
   constructor(props) {
     super(props);
-    var entries = localStorage.getItem('favMovies');
-    var obj = JSON.parse(entries);
-    for(var k in obj) {
-        if(obj[k] instanceof Object) {
-          //  console.log(obj[k]);
-        } else {
-          //  console.log(obj[k] + "<br>");
-        };
-    }
+    // this.removeFav=this.removeFav.bind(this);
+    this.entries = localStorage.getItem("favMovies");
+    var obj = JSON.parse(this.entries);
     this.state = {
-      fav: obj
+      fav: obj,
     };
   }
-
-  componentDidMount() {
-    console.log(this.state.fav);
-  }
+  removeFav = (event) => {
+    console.log("1", event.currentTarget.value);
+    var val = event.currentTarget.value;
+    this.setState({ liked: false });
+    console.log("2", this.entries);
+    var f = JSON.parse(this.entries).filter((i) => i.keyId != val);
+    console.log("3", f);
+    localStorage.clear();
+    localStorage.setItem("favMovies", JSON.stringify(f));
+    window.location.reload();
+  };
   render() {
-    return (
-      <div class="row searchResults">
-         {
-                this.state.fav.map(function(e) {
-                  return(
-                <div class="col-md-4">
-                    <div>
-                        <img src={e.obj.Poster} alt={e.obj.Title}></img>
-                    </div>
-                    <div class="details">
-                        <p>Title: {e.obj.Title}</p>
-                        <p>Release Date: {e.obj.Year}</p>
-                    </div>
-                    <div>
-                   <button id="fav" class="favBtn" value={e.obj.imdbID} onClick={((e) => this.removeFavorite(e))}>Unlike</button>
-                    </div>
+    const favList = this.state.fav;
+    if (favList == null || favList == "") {
+      return (
+        <div className="row searchResults">
+          <h5>empty</h5>
+        </div>
+      );
+    } else {
+      return (
+        <div className="row searchResults" style={{ margin: "10px" }}>
+          {favList.map(
+            function (list, i) {
+              return (
+                <div className="col-md-4" key={i}>
+                  <div>
+                    <img src={list.obj.Poster} alt={list.obj.Title}></img>
+                  </div>
+                  <div className="details">
+                    <p>Title: {list.obj.Title}</p>
+                    <p>Release Date: {list.obj.Year}</p>
+                  </div>
+                  <div>
+                    <button
+                      onClick={this.removeFav}
+                      id="fav"
+                      className="favBtn"
+                      value={list.keyId}
+                    >
+                      Unlike
+                    </button>
+                  </div>
                 </div>
-                 )
-                }
-                )
-            }
-      </div>
-    );
+              );
+            }.bind(this)
+          )}
+        </div>
+      );
+    }
   }
 }
 export default Favorites;
-
-
